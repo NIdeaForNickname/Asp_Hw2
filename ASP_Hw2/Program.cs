@@ -59,6 +59,10 @@ app.Map("/", async (context) =>
     await context.Response.WriteAsync("""
                                       <html>
                                       <body>
+                                        <form onsubmit='event.preventDefault(); window.location="/" + encodeURIComponent(this.inputValue.value);'>
+                                          <input type='text' name='inputValue'>
+                                          <button type='submit'>Go</button>
+                                        </form>
                                         <a href="/london"> London </a>
                                         <br>
                                         <a href="/berlin"> Berlin </a>
